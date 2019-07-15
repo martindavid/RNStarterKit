@@ -82,10 +82,10 @@ command -v react-native >/dev/null 2>&1 || {
 # }
 
 echo "----------------------------------------------------------"
-echo "Installing NPM Packages with Yarn"
+echo "Installing NPM Packages with npm"
 echo "----------------------------------------------------------"
 
-yarn || { echo "NPM Packages could not be installed!"; exit 1; };
+npm install || { echo "NPM Packages could not be installed!"; exit 1; };
 
 echo "----------------------------------------------------------"
 echo "Installing CocoaPods"
