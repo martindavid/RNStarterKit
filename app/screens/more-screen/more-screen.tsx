@@ -1,26 +1,26 @@
-import React from "react"
-import { View, Alert, ViewStyle, SectionList } from "react-native"
-import { NavigationScreenProps } from "react-navigation"
-import { ListItem } from "react-native-elements"
-import { color } from "app/theme"
-import { Toast, Screen } from "app/components"
-import { menuItems } from "./menu"
+import React from "react";
+import { View, Alert, ViewStyle, SectionList } from "react-native";
+import { NavigationScreenProps } from "react-navigation";
+import { ListItem } from "react-native-elements";
+import { color } from "app/theme";
+import { Toast, Screen } from "app/components";
+import { menuItems } from "./menu";
 
 export interface MoreScreenProps extends NavigationScreenProps<{}> {}
 
 const SCREEN_STYLE: ViewStyle = {
   backgroundColor: color.palette.white,
-  flex: 1,
-}
+  flex: 1
+};
 
 const TOP_VIEW: ViewStyle = {
-  flex: 1,
-}
+  flex: 1
+};
 
 export class MoreScreen extends React.Component<MoreScreenProps, {}> {
   static navigationOptions = ({ navigation }) => ({
-    title: "More",
-  })
+    title: "More"
+  });
 
   renderHeader = section => (
     <ListItem
@@ -28,16 +28,16 @@ export class MoreScreen extends React.Component<MoreScreenProps, {}> {
       titleStyle={{ fontWeight: "bold" }}
       containerStyle={{ backgroundColor: color.palette.lightestGrey }}
     />
-  )
+  );
 
   handlePressSignOut = async () => {
-    Toast("Signed Out")
-
-    Alert.alert("Sign Out")
-  }
+    Toast("Signed Out");
+    Alert.alert("Sign Out");
+    this.props.navigation.navigate("Welcome");
+  };
 
   handlePress = item => () =>
-    this.props.navigation.navigate("MoreScreenDetail", { ...item })
+    this.props.navigation.navigate("MoreScreenDetail", { ...item });
 
   renderItem = (item, index) => (
     <ListItem
@@ -47,7 +47,7 @@ export class MoreScreen extends React.Component<MoreScreenProps, {}> {
       rightIcon={{ name: "keyboard-arrow-right", color: color.textLink }}
       bottomDivider={true}
     />
-  )
+  );
 
   renderSignOut = () => (
     <ListItem
@@ -55,7 +55,7 @@ export class MoreScreen extends React.Component<MoreScreenProps, {}> {
       title="Sign Out"
       titleStyle={{ color: color.textLink }}
     />
-  )
+  );
 
   render() {
     return (
@@ -73,6 +73,6 @@ export class MoreScreen extends React.Component<MoreScreenProps, {}> {
           />
         </View>
       </Screen>
-    )
+    );
   }
 }
