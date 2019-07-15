@@ -1,8 +1,11 @@
-import * as React from "react"
-import { AppRegistry } from "react-native"
-import { elementsTheme } from "app/theme/element-theme"
-import { ThemeProvider } from "react-native-elements"
-import { RootNavigator } from "app/navigation"
+import * as React from "react";
+import { AppRegistry } from "react-native";
+import { elementsTheme } from "app/theme/element-theme";
+import { ThemeProvider } from "react-native-elements";
+import { RootNavigator } from "app/navigation";
+import { registerGlobalExceptionHandlers } from "app/global-exception-handler";
+
+registerGlobalExceptionHandlers();
 
 export class App extends React.Component<{}> {
   render() {
@@ -10,10 +13,10 @@ export class App extends React.Component<{}> {
       <ThemeProvider theme={elementsTheme}>
         <RootNavigator />
       </ThemeProvider>
-    )
+    );
   }
 }
 
-const APP_NAME = "RNStarterKit"
+const APP_NAME = "RNStarterKit";
 
-AppRegistry.registerComponent(APP_NAME, () => App)
+AppRegistry.registerComponent(APP_NAME, () => App);
