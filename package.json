@@ -9,7 +9,7 @@
     "postinstall": "jetify"
   },
   "dependencies": {
-    "apisauce": "^1.0.3",
+    "apisauce": "^2.0.0",
     "bugsnag-react-native": "^2.22.0",
     "ramda": "^0.26.1",
     "react": "16.8.6",
