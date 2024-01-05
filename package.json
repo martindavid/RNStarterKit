@@ -11,7 +11,7 @@
     "snyk-protect": "snyk-protect"
   },
   "dependencies": {
-    "apisauce": "^2.1.4",
+    "apisauce": "^3.0.1",
     "bugsnag-react-native": "^2.22.0",
     "ramda": "^0.27.2",
     "react": "16.8.6",
